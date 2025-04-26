@@ -1,0 +1,20 @@
+name: Super-Linter
+
+on: push
+
+jobs:
+    super-lint:
+    name: Lint our code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get copy of repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Run Super-Linter
+        uses: github/super-linter@v4
+        env:
+          VALIDATE_ALL_CODEBASE: false
+          DEFAULT_BRANCH: "master"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
