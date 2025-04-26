@@ -4,8 +4,8 @@ on: push
 
 jobs:
     super-lint:
-    name: Lint our code
-    runs-on: ubuntu-latest
+      name: Lint our code
+      runs-on: ubuntu-latest
 
     steps:
       - name: Get copy of repository
